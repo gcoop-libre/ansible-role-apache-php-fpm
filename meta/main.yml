@@ -1,0 +1,17 @@
+galaxy_info:
+  author: gcoop-libre
+  description: Configure php-fpm for Apache in Debian 9 servers
+  company: gcoop Cooperativa de Software Libre
+  issue_tracker_url: https://github.com/gcoop-libre/ansible-role-apache-php-fpm./issues
+  license: GPLv2
+  github_branch: master
+  min_ansible_version: 2.0
+
+  platforms:
+    - name: Debian
+      versions:
+        - all
+
+
+  galaxy_tags:
+    - PHP-FPM

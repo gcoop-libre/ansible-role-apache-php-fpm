@@ -1,0 +1,30 @@
+---
+# tasks file for ansible-role-apache-php-fpm
+
+- name: "Ensure PHP-FPM is installed"
+  apt: "pkg={{ item }} state=installed"
+  with_items:
+    - php7.0-common
+    - php7.0-fpm
+  when: ansible_os_family == 'Debian'
+
+- name: "Enable PHP-FPM configurations"
+  file:
+    src: "/etc/apache2/conf-available/php7.0-fpm.conf"
+    dest: "/etc/apache2/conf-enabled/php7.0-fpm.conf"
+    state: link
+
+- name: "Copy www.conf to PHP-FPM config"
+  template:
+    src: "www.conf.j2"
+    dest: "/etc/php/7.0/fpm/pool.d/www.conf"
+
+- name: "Restart php-fpm"
+  service:
+    name: php7.0-fpm
+    state: restarted
+
+- name: "Restart Apache"
+  service:
+    name: apache2
+    state: restarted
