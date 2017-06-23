@@ -34,7 +34,7 @@ None
 Example Playbook
 ----------------
 
-    - hosts: [suitecrmsaas]
+    - hosts: [servers]
       become: yes
       remote_user: "{{ remote_user }}"
 
