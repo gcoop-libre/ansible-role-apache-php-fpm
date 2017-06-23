@@ -12,17 +12,17 @@ Role Variables
 --------------
 
 
-apache_php_fpm_user: www-data
-apache_php_fpm_group: www-data
-apache_php_fpm_listen: /run/php/php7.0-fpm.sock
-apache_php_fpm_listen_owner: www-data
-apache_php_fpm_listen_group: www-data
-apache_php_fpm_pm: ondemand
-apache_php_fpm_pm_max_children: 5
-apache_php_fpm_pm_start_servers: 2
-apache_php_fpm_pm_min_spare_servers: 1
-apache_php_fpm_pm_max_spare_servers: 3
-apache_php_fpm_request_slowlog_timeout: 2
+* apache_php_fpm_user: www-data
+* apache_php_fpm_group: www-data
+* apache_php_fpm_listen: /run/php/php7.0-fpm.sock
+* apache_php_fpm_listen_owner: www-data
+* apache_php_fpm_listen_group: www-data
+* apache_php_fpm_pm: ondemand
+* apache_php_fpm_pm_max_children: 5
+* apache_php_fpm_pm_start_servers: 2
+* apache_php_fpm_pm_min_spare_servers: 1
+* apache_php_fpm_pm_max_spare_servers: 3
+* apache_php_fpm_request_slowlog_timeout: 2
 
 
 
