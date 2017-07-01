@@ -13,18 +13,22 @@
     src: "/etc/apache2/conf-available/php7.0-fpm.conf"
     dest: "/etc/apache2/conf-enabled/php7.0-fpm.conf"
     state: link
+  register: apachephpfpmconf
 
 - name: "Copy www.conf to PHP-FPM config"
   template:
     src: "www.conf.j2"
     dest: "/etc/php/7.0/fpm/pool.d/www.conf"
+  register: phpfpmpoolfile
 
 - name: "Restart php-fpm"
   service:
     name: php7.0-fpm
     state: restarted
+  when: phpfpmpoolfile.changed
 
 - name: "Restart Apache"
   service:
     name: apache2
     state: restarted
+  when: apachephpfpmconf.changed
