@@ -6,7 +6,7 @@ An Ansible Role that configures Apache for PHP-FPM (php7.0) usage on Debian 9
 Requirements
 ------------
 
-This role is dependent upon `gcoop-lobre.apache`, and also requires you have PHP running with PHP-FPM somewhere on the server or elsewhere (I usually configure PHP with the `geerlingguy.php` role).
+This role is dependent upon `gcoop-libre.apache`, and also requires you have PHP running with PHP-FPM somewhere on the server or elsewhere (I usually configure PHP with the `geerlingguy.php` role).
 
 Role Variables
 --------------
